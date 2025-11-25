@@ -133,12 +133,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BaseChara.cpp" />
+    <ClCompile Include="Car.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="theMain.cpp" />
     <ClCompile Include="Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseChara.h" />
+    <ClInclude Include="Car.h" />
     <ClInclude Include="globals.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Vector2D.h" />

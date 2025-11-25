@@ -1,13 +1,15 @@
 #include "DxLib.h"
 #include "globals.h"
 #include "input.h"
-
+#include "BaseChara.h"
 
 namespace
 {
 	const int BGCOLOR[3] = {0, 0, 0}; // ”wŒiF{ 255, 250, 205 }; // ”wŒiF
 	int crrTime;
 	int prevTime;
+	BaseChara* base = nullptr;
+	BaseChara* base2 = nullptr;
 }
 
 
@@ -34,15 +36,22 @@ void DxInit()
 void Initialize()
 {
 	// ‰Šú‰»ˆ—
+	base = new BaseChara();//BaseChara‚ÌƒCƒ“ƒXƒ^ƒ“ƒX¶¬
+	base2 = new BaseChara(Vector2D(200.0f, 200.0f), Vector2D(2.0f, 3.0f), 
+		GetColor(255, 0, 0), SHAPE::SQUARE);
 }
 void Update()
 {
 	// XVˆ—
+	base->Update();
+	base2->Update();
 }
 
 void Draw()
 {
 	// •`‰æˆ—
+	base->Draw();
+	base2->Draw();
 }
 
 
@@ -68,8 +77,6 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 		Update();
 
 		Draw();
-
-
 
 		ScreenFlip();
 		WaitTimer(16);
