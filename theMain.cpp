@@ -3,7 +3,7 @@
 #include "input.h"
 //#include "BaseChara.h"
 #include "Car.h"
-
+#include "Ufo.h"
 namespace
 {
 	const int BGCOLOR[3] = {0, 0, 0}; // ”wŒiF{ 255, 250, 205 }; // ”wŒiF
@@ -12,6 +12,7 @@ namespace
 	//BaseChara* base = nullptr;
 	//BaseChara* base2 = nullptr;
 	Car* car = nullptr;
+	Ufo* ufo = nullptr;
 	//‚¢‚ë‚ñ‚È’è”
 	const int GREEN_ZONE = 20; //’n–Ê‚Ì—Î‚Ì—Ìˆæ‚‚³
 	const unsigned int SKY_COLOR = GetColor(135, 206, 235);
@@ -59,6 +60,8 @@ void Initialize()
 	//  	    GetColor(255, 0, 0), SHAPE::SQUARE);
 	car = new Car(Vector2D(200.0f, 200.0f), Vector2D(200.0f, 0.0f),
 		GetColor(255, 0, 0));
+	ufo = new Ufo(Vector2D(200.0f, 200.0f), Vector2D(100.0f, 0.0f),
+		GetColor(100, 100, 255));
 
 }
 void Update()
@@ -67,6 +70,7 @@ void Update()
 	//base->Update();
 	//base2->Update();
 	car->Update();
+	ufo->Update();
 }
 
 void Draw()
@@ -76,6 +80,7 @@ void Draw()
 	//base->Draw();
 	//base2->Draw();
 	car->Draw();
+	ufo->Draw();
 }
 
 
