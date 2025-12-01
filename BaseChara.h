@@ -36,10 +36,11 @@ public:
 	unsigned int GetCharaColor() const { return Color_; }
 	void SetShape(const int shape) { shape_ = shape; }
 	int GetShape() const { return shape_; }
-private:
+protected:
 	Vector2D pos_;//位置
 	Vector2D vel_;//速度
 	unsigned int Color_;//色 符号なし整数
 	int shape_;//形状
+//次回protectedの説明から始める
 };
 

@@ -1,17 +1,35 @@
 #include "DxLib.h"
 #include "globals.h"
 #include "input.h"
-#include "BaseChara.h"
+//#include "BaseChara.h"
+#include "Car.h"
 
 namespace
 {
 	const int BGCOLOR[3] = {0, 0, 0}; // 背景色{ 255, 250, 205 }; // 背景色
 	int crrTime;
 	int prevTime;
-	BaseChara* base = nullptr;
-	BaseChara* base2 = nullptr;
+	//BaseChara* base = nullptr;
+	//BaseChara* base2 = nullptr;
+	Car* car = nullptr;
+	//いろんな定数
+	const int GREEN_ZONE = 20; //地面の緑の領域高さ
+	const unsigned int SKY_COLOR = GetColor(135, 206, 235);
+	const unsigned int GROUND_COLOR = GetColor(240, 128, 128);
+	const unsigned int GRASS_COLOR = GetColor(50, 205, 50);
 }
 
+
+void DrawStage()
+{
+	
+	DrawBox(0, 0, WIN_WIDTH, WIN_HEIGHT, SKY_COLOR, TRUE);
+	DrawBox(0, GROUND_HEIGHT,
+		WIN_WIDTH, WIN_HEIGHT,GROUND_COLOR, TRUE);
+	DrawBox(0, GROUND_HEIGHT, 
+		   WIN_WIDTH, GROUND_HEIGHT + GREEN_ZONE,
+		   GRASS_COLOR, TRUE);
+}
 
 float gDeltaTime = 0.0f; // フレーム間の時間差
 
@@ -36,22 +54,28 @@ void DxInit()
 void Initialize()
 {
 	// 初期化処理
-	base = new BaseChara();//BaseCharaのインスタンス生成
-	base2 = new BaseChara(Vector2D(200.0f, 200.0f), Vector2D(2.0f, 3.0f), 
-		GetColor(255, 0, 0), SHAPE::SQUARE);
+	//base = new BaseChara();//BaseCharaのインスタンス生成
+	//base2 = new BaseChara(Vector2D(200.0f, 200.0f), Vector2D(2.0f, 3.0f), 
+	//  	    GetColor(255, 0, 0), SHAPE::SQUARE);
+	car = new Car(Vector2D(200.0f, 200.0f), Vector2D(200.0f, 0.0f),
+		GetColor(255, 0, 0));
+
 }
 void Update()
 {
 	// 更新処理
-	base->Update();
-	base2->Update();
+	//base->Update();
+	//base2->Update();
+	car->Update();
 }
 
 void Draw()
 {
+	DrawStage();
 	// 描画処理
-	base->Draw();
-	base2->Draw();
+	//base->Draw();
+	//base2->Draw();
+	car->Draw();
 }
 
 

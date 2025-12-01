@@ -12,5 +12,7 @@ public:
 	void Draw() override; //オーバーライド
 private:
 	void RepeatMoveLeftRight(); //左右に往復移動する（Carクラス専用）
+	int w_;//車の幅
+	int h_;//車の高さ
 };
 
