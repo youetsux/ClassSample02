@@ -135,6 +135,7 @@
     <ClCompile Include="BaseChara.cpp" />
     <ClCompile Include="Car.cpp" />
     <ClCompile Include="Input.cpp" />
+    <ClCompile Include="Rocket.cpp" />
     <ClCompile Include="theMain.cpp" />
     <ClCompile Include="Ufo.cpp" />
     <ClCompile Include="Vector2D.cpp" />
@@ -144,6 +145,7 @@
     <ClInclude Include="Car.h" />
     <ClInclude Include="globals.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="Rocket.h" />
     <ClInclude Include="Ufo.h" />
     <ClInclude Include="Vector2D.h" />
   </ItemGroup>
