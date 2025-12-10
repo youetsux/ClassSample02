@@ -5,6 +5,7 @@
 #include "Car.h"
 #include "Ufo.h"
 #include "Rocket.h"
+#include "Balloon.h"
 
 
 namespace
@@ -17,6 +18,7 @@ namespace
 	Car* car = nullptr;
 	Ufo* ufo = nullptr;
 	Rocket* rocket = nullptr;
+	Balloon* balloon = nullptr;
 	//‚¢‚ë‚ñ‚È’è”
 	const int GREEN_ZONE = 20; //’n–Ê‚Ì—Î‚Ì—Ìˆæ‚‚³
 	const unsigned int SKY_COLOR = GetColor(135, 206, 235);
@@ -67,6 +69,7 @@ void Initialize()
 	ufo = new Ufo(Vector2D(200.0f, 200.0f), Vector2D(100.0f, 0.0f),
 		GetColor(100, 100, 255));
 	rocket = new Rocket();
+	balloon = new Balloon();
 }
 void Update()
 {
@@ -76,6 +79,7 @@ void Update()
 	car->Update();
 	ufo->Update();
 	rocket->Update();
+	balloon->Update();
 }
 
 void Draw()
@@ -87,6 +91,7 @@ void Draw()
 	car->Draw();
 	ufo->Draw();
 	rocket->Draw();
+	balloon->Draw();
 }
 
 
