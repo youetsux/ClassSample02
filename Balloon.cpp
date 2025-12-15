@@ -3,10 +3,12 @@
 #include "globals.h"
 #include <cmath>
 
+//ãˆã¸ã¸ã€ã‹ãã‹ãˆã¡ã‚ƒã£ãŸã‚ˆã€‚
+
 Balloon::Balloon()
 	: BaseChara(), radius_(15)
 {
-	vel_ = { 0.0f, -30.0f };//ãŒü‚«‚É50‚Ì‘¬“x
+	vel_ = { 0.0f, -30.0f };//ä¸Šå‘ãã«50ã®é€Ÿåº¦
 	pos_ = { (float)GetRand(WIN_WIDTH - 1), 
 		    (float)(GROUND_HEIGHT - radius_) };
 	Color_ = GetColor(255, 0, 0);
@@ -32,7 +34,7 @@ void Balloon::Update()
 void Balloon::Draw()
 {
 	const float swingWidth = 50.0f;
-	//pos‚ğ’†S‚Æ‚µ‚ÄA”¼Œa15‚Ì‰~‚ğ•`‰æ
+	//posã‚’ä¸­å¿ƒã¨ã—ã¦ã€åŠå¾„15ã®å††ã‚’æç”»
 	float swingOffset = swingWidth * sin(totalTime_);
 	DrawCircle((int)(pos_.x + swingOffset), (int)(pos_.y),
 		radius_, GetCharaColor(), true);
@@ -44,9 +46,9 @@ void Balloon::Draw()
 void Balloon::RiseUpward()
 {
 	float dt = GetDeltaTime();
-	// Œ»İˆÊ’uæ“¾
+	// ç¾åœ¨ä½ç½®å–å¾—
 	pos_.y += vel_.y * dt;
-	// ã’[‚É“’B‚µ‚½‚ç‰º‚©‚çÄoŒ»
+	// ä¸Šç«¯ã«åˆ°é”ã—ãŸã‚‰ä¸‹ã‹ã‚‰å†å‡ºç¾
 	if (pos_.y < 0) {
 		pos_.y = 0;
 	}

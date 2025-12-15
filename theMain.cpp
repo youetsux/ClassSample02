@@ -6,6 +6,7 @@
 #include "Ufo.h"
 #include "Rocket.h"
 #include "Balloon.h"
+#include <vector>
 
 
 namespace
@@ -24,6 +25,7 @@ namespace
 	const unsigned int SKY_COLOR = GetColor(135, 206, 235);
 	const unsigned int GROUND_COLOR = GetColor(240, 128, 128);
 	const unsigned int GRASS_COLOR = GetColor(50, 205, 50);
+	std::vector<BaseChara*> characters;
 }
 
 
@@ -70,16 +72,25 @@ void Initialize()
 		GetColor(100, 100, 255));
 	rocket = new Rocket();
 	balloon = new Balloon();
+	characters.push_back(car);
+	characters.push_back(ufo);
+	characters.push_back(rocket);
+	characters.push_back(balloon);
+
 }
 void Update()
 {
 	// XVˆ—
 	//base->Update();
 	//base2->Update();
-	car->Update();
-	ufo->Update();
-	rocket->Update();
-	balloon->Update();
+	//car->Update();
+	//ufo->Update();
+	//rocket->Update();
+	//balloon->Update();
+	for (auto character : characters)
+	{
+		character->Update();
+	}
 }
 
 void Draw()
@@ -88,10 +99,14 @@ void Draw()
 	// •`‰æˆ—
 	//base->Draw();
 	//base2->Draw();
-	car->Draw();
-	ufo->Draw();
-	rocket->Draw();
-	balloon->Draw();
+	//car->Draw();
+	//ufo->Draw();
+	//rocket->Draw();
+	//balloon->Draw();
+	for (auto character : characters)
+	{
+		character->Draw();
+	}
 }
 
 
